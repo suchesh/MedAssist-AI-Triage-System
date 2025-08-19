@@ -2,7 +2,7 @@ import os
 import google.generativeai as genai
 from  PyPDF2 import PdfReader
 
-genai.configure(api_key="AIzaSyCA55RaKPRyM-u0KNKnN-D6cT2xTa-vC54")
+genai.configure(api_key="")
 
 
 model = genai.GenerativeModel("gemini-1.5-flash")   
