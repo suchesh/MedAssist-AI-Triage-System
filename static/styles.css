@@ -1,0 +1,322 @@
+/* ---------- Base & Layout ---------- */
+*{box-sizing:border-box}
+:root{
+  --blue:#2563eb;
+  --blue-dark:#1d4ed8;
+  --text:#0f172a;
+  --muted:#475569;
+  --border:#e5e7eb;
+  --card:#ffffff;
+  --bg:#f6f9ff;
+}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+.container{max-width:1150px;margin:0 auto;padding:0 24px}
+
+/* ---------- Nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:10;
+  background:#fff;border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 24px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.pulse{
+  width:35px;height:35px;border-radius:6px;
+  border-radius: 10px;
+}
+.brand-text{font-size:22px}
+.badge{
+  margin-left:4px;padding:6px 12px;border-radius:12px;
+  background:#eef2f7;color:#4b5563;font-size:13px;font-weight:600;
+}
+.nav-right{display:flex;align-items:center;gap:16px}
+.link{color:#334155;text-decoration:none;font-weight:600}
+.link:hover{color:#111827}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 20px;border-radius:10px;font-weight:700;
+  text-decoration:none;cursor:pointer;border:1px solid transparent;
+  transition:.18s ease-in-out; user-select:none;
+}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--blue-dark)}
+.btn-ghost{background:#fff;color:#111827;border-color:var(--border)}
+.btn-ghost:hover{background:#f8fafc}
+.btn.wide{width:100%}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:radial-gradient(1200px 400px at 50% -10%, #e8f1ff 0%, transparent 60%), #f7fbff;
+  border-bottom:1px solid var(--border);
+}
+.hero-inner{padding:96px 0 56px}
+.hero-title{
+  font-size:65px;line-height:1.1;font-weight:800;text-align:center;margin:0 0 12px;
+}
+.hero-accent{
+  background:linear-gradient(90deg,#2563eb,#3b82f6);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;
+}
+.hero-sub{
+  text-align:center;max-width:820px;margin:0 auto;color:#475569;font-size:18px;
+}
+.hero-actions{display:flex;gap:16px;justify-content:center;margin-top:28px}
+
+/* ---------- Feature Cards ---------- */
+.section{padding:56px 0}
+.section.soft{background:#fbfdff}
+.features{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:26px;
+}
+.card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:28px;box-shadow:0 2px 6px rgba(15,23,42,.04);
+}
+.feature{text-align:center}
+.icon-badge{
+  width:58px;height:58px;border-radius:14px;margin:0 auto 14px;
+  display:flex;align-items:center;justify-content:center;font-size:30px;
+}
+.bg-soft-red{background:#fee2e2}
+.bg-soft-green{background:#dcfce7}
+.bg-soft-yellow{background:#fef9c3}
+.card-title{font-size:18px;font-weight:800;margin:6px 0 6px}
+.card-sub{font-size:15px;color:#606f7b}
+
+/* ---------- How It Works ---------- */
+.section-title{text-align:center;font-size:28px;font-weight:800;margin:0 0 28px}
+.how-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+}
+.how{text-align:center;padding:22px}
+.step-num{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:800;margin:0 auto 10px;font-size:16px;
+}
+.how-title{font-weight:800;margin-bottom:4px}
+.how-sub{color:#64748b;font-size:14px}
+
+/* ---------- Form (patient.html) ---------- */
+.form{display:grid;gap:14px}
+.label{font-weight:700}
+.input{
+  border:1px solid var(--border);border-radius:10px;
+  padding:12px 14px;font-size:15px;background:#fff;outline:none;
+}
+.input:focus{border-color:#bfdbfe;box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+.textarea{min-height:110px;resize:vertical}
+.grid{display:grid;gap:12px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.pdf-output{margin-top:16px;white-space:pre-wrap}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1100px){
+  .hero-title{font-size:48px}
+}
+@media (max-width:900px){
+  .features{grid-template-columns:1fr}
+  .how-grid{grid-template-columns:1fr 1fr}
+  .grid-4{grid-template-columns:1fr 1fr}
+  .hero-title{font-size:40px}
+}
+@media (max-width:560px){
+  .how-grid{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:1fr}
+  .hero-title{font-size:34px}
+}
+
+{position:relative}
+.pd-voice-btn{
+  position:absolute; top:8px; right:8px;
+  display:inline-flex; align-items:center; gap:6px;
+  padding:8px 12px; border-radius:8px; border:1px solid var(--border);
+  background:var(--blue); color:#fff; font-weight:700; font-size:14px;
+  cursor:pointer; transition:.18s ease-in-out;
+}
+
+
+
+
+
+/* ====== Patient Form Components (Improved Styling) ====== */
+/* ================= Patient Form Styles ================= */
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e293b; /* soft dark navy instead of black */
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+/* Underline accent */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  margin: 8px auto 0;
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  border-radius: 4px;
+}
+
+/* Subtle shadow for readability */
+.section-title {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Grid utility */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pd-mt-12 { margin-top: 12px; }
+
+/* Wrapper card – softer look */
+.pd-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 26px 28px;
+  border-radius: 16px;
+  background: #fdfdfd; /* softer white */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #edf2f7;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.pd-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Section headers */
+.pd-section { display: block; margin-bottom: 20px; }
+.pd-legend {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #1f2937;
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+.pd-divider {
+  height: 1px;
+  background: linear-gradient(to right, #e2e8f0, #f9fafb, #e2e8f0);
+  margin: 16px 0;
+  border-radius: 2px;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 3px solid #cfd9e8;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: #f9fafb;
+  transition: border 0.25s, box-shadow 0.25s, background 0.25s;
+}
+.input:focus {
+  border-color: #2563eb;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  outline: none;
+}
+.input::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Textarea */
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* File upload */
+.pd-file-drop {
+  border: 2px dashed #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+  padding: 14px;
+  position: relative;
+  transition: border 0.25s, background 0.25s;
+}
+.pd-file-drop:hover {
+  background: #f1f5f9;
+  border-color: #2563eb;
+}
+.pd-file-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.pd-file-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.pd-file-name {
+  color: #6b7280;
+  font-size: 14px;
+}
+.pd-file-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Submit button */
+.pd-submit {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: linear-gradient(120deg,#54c5b6, #2563eb, #54c5b6);
+  color: #fff;
+  border: 0;
+  transition: filter 0.2s, transform 0.2s;
+}
+.pd-submit:hover {
+  filter: brightness(0.97);
+  transform: translateY(-1px);
+}
+
+/* Output card */
+.pdf-output {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f9fafb;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .pd-wrapper { padding: 20px; }
+}
